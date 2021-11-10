@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Rlezzo</title>
+    <title>Posts on Rezzo blog</title>
     <link>https://rlezzo.github.io/post/</link>
-    <description>Recent content in Posts on Rlezzo</description>
+    <description>Recent content in Posts on Rezzo blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Nov 2021 22:21:08 +0800</lastBuildDate><atom:link href="https://rlezzo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
