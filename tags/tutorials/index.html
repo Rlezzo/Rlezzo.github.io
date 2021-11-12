@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Git SSH 配置" />
-    <meta property="og:title" content="Git SSH 配置" />
-    <meta property="twitter:title" content="Git SSH 配置" />
+    <meta name="title" content="Tutorials" />
+    <meta property="og:title" content="Tutorials" />
+    <meta property="twitter:title" content="Tutorials" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Rezzo">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Git SSH 配置- Rezzo 的博客</title>
+    <title>Tutorials- Rezzo 的博客</title>
 
-    <link rel="canonical" href="/post/gitssh/">
+    <link rel="canonical" href="/tags/tutorials/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -150,46 +150,14 @@
 
 
 
-
-<style type="text/css">
-    header.intro-header {
-        background-image: url('/img/home-page-title-img.png');
-		background-position-y: 20%;
-	}
-</style>
-
-<header class="intro-header" >
-
+<header class="intro-header" style="background-image: url('/img/home-page-title-img.png'); background-position-y: 20%;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        
-                        <a class="tag" href="/tags/tutorials" title="Tutorials">
-                            Tutorials
-                        </a>
-                        
-                        <a class="tag" href="/tags/ssh" title="SSH">
-                            SSH
-                        </a>
-                        
-                    </div>
-                    <h1>Git SSH 配置</h1>
-                    <h2 class="subheading"></h2>
-                    <span class="meta">
-                        
-                            Posted by 
-                            
-                                Rezzo
-                             
-                            on 
-                            Thursday, November 11, 2021
-                            
-                            
-                            
-                            
-                    </span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading" style = "text-align: right;">
+                    <h1 style = "opacity: 0.6; color: #37d1ffde">Rezzo blog  </h1>
+                    
+		    <span class="subheading" style = "opacity: 0.8; color: #37d1ffde;">苟利国家生死以，岂因祸福避趋之</span>
                 </div>
             </div>
         </div>
@@ -198,140 +166,195 @@
 
 
 
-
-<article>
-    <div class="container">
-        <div class="row">
-
-            
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
-                
-                <h4 id="1查看是否配置过密匙">1.查看是否配置过密匙</h4>
-<pre tabindex="0"><code>	cd ~/.ssh
-</code></pre><p>不加cd，就是看存不存在 .ssh 文件夹
-加cd，如果存在这个文件夹，就直接跳转到这个文件夹
-如果不存在这个文件夹，会显示 No such file or directory
-
-  <img src="/img/gitssh/Hasssh.png" alt="Hasssh">
-
-</p>
-<h4 id="2创建ssh">2.创建ssh</h4>
-<p>输入如下命令，将引号内的邮箱换成你的GitHub注册邮箱</p>
-<pre tabindex="0"><code>	ssh-keygen -t rsa -C 'youremail@qq.com'
-</code></pre><p>然后无脑回车，完成后出现
-
-  <img src="/img/gitssh/sshkey.png" alt="sshkey">
-
-</p>
-<h4 id="3查看公匙">3.查看公匙</h4>
-<pre tabindex="0"><code>	cat ~/.ssh/id_rsa.pub
-</code></pre><p>输入上面的命令，得到如图所示字符串
-
-  <img src="/img/gitssh/pub.png" alt="pub">
-
-
-或者看上面保存的地址，打开id_rsa.pub 文件复制文件内容
-
-  <img src="/img/gitssh/keypos.png" alt="keypos">
-
-</p>
-<h4 id="4添加-ssh-key">4.添加 SSH key</h4>
-<p>
-  <img src="/img/gitssh/gitssh1.png" alt="gitssh1">
-
-
-Title 可以随意填
-
-  <img src="/img/gitssh/gitssh2.png" alt="gitssh2">
-
-</p>
-<h4 id="5验证是否成功">5.验证是否成功</h4>
-<p>输入下面的命令</p>
-<pre tabindex="0"><code>	ssh -T git@github.com
-</code></pre><p>出现下图所示提示就成功了
-
-  <img src="/img/gitssh/success.png" alt="success">
-
-</p>
-
-
-                
-
-                <hr>
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/post/howtocreatblog1/" data-toggle="tooltip" data-placement="top" title="保姆级免费建博客教程①">&larr;
-                            Previous Post</a>
-                    </li>
-                    
-                    
-                </ul>
-                
-<div id="disqus-comment"></div>
-
-
-            </div>
-
-            
-            
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
+  
+<div class="container">
+    <div class="row">
+        
+        
+   	    <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container
+        ">
             
 
-            
-            <div class="
-                col-lg-11 col-lg-offset-1
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                
-                
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        
-                        
-                        
-                        <a href="/tags/blog" title="blog">
-                            blog
-                        </a>
-                        
-                        
-                        
-                        
-                        
-                        <a href="/tags/tutorials" title="tutorials">
-                            tutorials
-                        </a>
-                        
-                        
-                    </div>
-                </section>
-                
-
-                
-                
-            </div>
+<div class="post-preview">
+    <a href="https://rlezzo.github.io/post/gitssh/">
+        <h2 class="post-title">
+            Git SSH 配置
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            1.查看是否配置过密匙 cd ~/.ssh 不加cd，就是看存不存在 .ssh 文件夹 加cd，如果存在这个文件夹，就直接跳转到这个文件夹 如果不存在这个文件夹，会显示 No such
+       
         </div>
-    </div>
-</article>
+    </a>
+    <p class="post-meta">
+    
+        Posted byRezzo  Thursday, November 11, 2021
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="https://rlezzo.github.io/post/howtocreatblog1/">
+        <h2 class="post-title">
+            保姆级免费建博客教程①
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            Part One 免费制作自己的博客！手把手保姆级教学！ 第二部分 点击跳转 第一步：申请一个GitHub账号 够宝宝吧，从申请账号开始 点击GitHub ： 点击右上
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted byRezzo  Thursday, November 11, 2021
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="https://rlezzo.github.io/post/howtocreatblog2/">
+        <h2 class="post-title">
+            保姆级免费建博客教程②
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            Part Two 免费制作自己的博客！手把手保姆级教学！ 第一部分 点击跳转 前期准备工作做好以后，文件夹应该是这个状态 进入blog文件夹 右键，点击Git Bash He
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted byRezzo  Thursday, November 11, 2021
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+
+            
+
+
+
+       	</div>
+        
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+                    <a href="/tags/blog" title="blog">
+                        blog
+                    </a>
+               
+            
+               
+            
+               
+                    <a href="/tags/tutorials" title="tutorials">
+                        tutorials
+                    </a>
+               
+            
+        </div>
+    </section>
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	<hr><h5><a href="/top/about">ABOUT ME</a></h5>
+        <div class="short-about">
+            
+            <a href="/top/about">
+               <img src="/img/Hirasawa_yui.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>K-ON！</p>
+            
+           
+           <ul class="list-inline">
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+
+    
+    
+    <section>
+        <hr>
+        <h5>BOOKMARKS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/">C# 编程指南</a></li>
+            
+            <li><a target="_blank" href="https://catlikecoding.com/unity/tutorials/">Shader for Unity</a></li>
+            
+            <li><a target="_blank" href="https://dev.gameres.com/program/unity3dmanual/unity3d.html">Unity3D中文手册</a></li>
+            
+            <li><a target="_blank" href="https://gdconf.com/">GDC</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/">掘金</a></li>
+            
+        </ul>
+    </section>
+    
+</div>
+
+	</div>
+</div>
+
 
 
 
