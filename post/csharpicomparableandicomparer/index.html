@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Git SSH 配置" />
-    <meta property="og:title" content="Git SSH 配置" />
-    <meta property="twitter:title" content="Git SSH 配置" />
+    <meta name="title" content="C# IComparable 和 IComparer" />
+    <meta property="og:title" content="C# IComparable 和 IComparer" />
+    <meta property="twitter:title" content="C# IComparable 和 IComparer" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Rezzo">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Git SSH 配置- Rezzo 的博客</title>
+    <title>C# IComparable 和 IComparer- Rezzo 的博客</title>
 
-    <link rel="canonical" href="/post/gitssh/">
+    <link rel="canonical" href="/post/csharpicomparableandicomparer/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -174,12 +174,16 @@
                             Tutorials
                         </a>
                         
-                        <a class="tag" href="/tags/ssh" title="SSH">
-                            SSH
+                        <a class="tag" href="/tags/blog" title="Blog">
+                            Blog
+                        </a>
+                        
+                        <a class="tag" href="/tags/c" title="C#">
+                            C#
                         </a>
                         
                     </div>
-                    <h1>Git SSH 配置</h1>
+                    <h1>C# IComparable 和 IComparer</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -188,7 +192,7 @@
                                 Rezzo
                              
                             on 
-                            Thursday, November 11, 2021
+                            Thursday, December 23, 2021
                             
                             
                             
@@ -214,54 +218,89 @@
                 post-container">
 
                 
-                <h4 id="1查看是否配置过密匙">1.查看是否配置过密匙</h4>
-<pre tabindex="0"><code>	cd ~/.ssh
-</code></pre><p>不加cd，就是看存不存在 .ssh 文件夹
-加cd，如果存在这个文件夹，就直接跳转到这个文件夹
-如果不存在这个文件夹，会显示 No such file or directory
+                <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#ff79c6">using</span> System;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">namespace</span> HelloWorldApplication
+{
+    <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">HelloWorld</span>
+    {
+        <span style="color:#ff79c6">static</span> <span style="color:#ff79c6">void</span> Main(<span style="color:#8be9fd">string</span>[] args)
+        {
+		Student stu1 = <span style="color:#ff79c6">new</span> Student(<span style="color:#bd93f9">8</span>, <span style="color:#f1fa8c">&#34;c&#34;</span>);
+		Student stu2 = <span style="color:#ff79c6">new</span> Student(<span style="color:#bd93f9">10</span>, <span style="color:#f1fa8c">&#34;a&#34;</span>);
+		Student stu3 = <span style="color:#ff79c6">new</span> Student(<span style="color:#bd93f9">24</span>, <span style="color:#f1fa8c">&#34;b&#34;</span>);
+                
+		List&lt;Student&gt; list = <span style="color:#ff79c6">new</span> List&lt;Student&gt;();
+		list.Add(stu3);
+		list.Add(stu2);
+		list.Add(stu1);
+                
+		<span style="color:#ff79c6">foreach</span>(Student stu <span style="color:#ff79c6">in</span> list)
+		{
+			Console.WriteLine(<span style="color:#f1fa8c">$&#34;name: {stu.name}; age: {stu.age}&#34;</span>);
+		}
+                
+		Console.WriteLine(<span style="color:#f1fa8c">&#34;按age排序&#34;</span>);
+		list.Sort();
+		<span style="color:#ff79c6">foreach</span>(Student stu <span style="color:#ff79c6">in</span> list)
+		{
+			Console.WriteLine(<span style="color:#f1fa8c">$&#34;name: {stu.name}; age: {stu.age}&#34;</span>);
+		}
+                
+		Console.WriteLine(<span style="color:#f1fa8c">&#34;按name排序&#34;</span>);
+		list.Sort(<span style="color:#ff79c6">new</span> StudentComparator());
+		<span style="color:#ff79c6">foreach</span>(Student stu <span style="color:#ff79c6">in</span> list)
+		{
+			Console.WriteLine(<span style="color:#f1fa8c">$&#34;name: {stu.name}; age: {stu.age}&#34;</span>);
+		}
+                Console.ReadKey();
+        }
+    }
+	<span style="color:#6272a4">// 创建了自己的实体类，如Student
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// 默认想要对其按照年龄进行排序，则需要为实体类实现IComparable接口
+</span><span style="color:#6272a4"></span>	<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Student</span> :IComparable&lt;Student&gt;
+	{
+		<span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> age;
+		<span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> name;
+		
+		<span style="color:#ff79c6">public</span> Student(<span style="color:#8be9fd">int</span> age, <span style="color:#8be9fd">string</span> name)
+		{
+			<span style="color:#ff79c6">this</span>.age = age;
+			<span style="color:#ff79c6">this</span>.name = name;
+		}
+		
+		<span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> CompareTo(Student other)
+		{
+			<span style="color:#ff79c6">return</span> age - other.age;
+		}
+	}
+	<span style="color:#6272a4">// 如果不想使用年龄作为比较器了
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// 这个时候IComparer的作用就来了，可使用IComparer来实现一个自定义的比较器
+</span><span style="color:#6272a4"></span>	<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">StudentComparator</span> : IComparer&lt;Student&gt;
+	{
+                <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> Compare(Student a, Student b)
+                {
+                    <span style="color:#ff79c6">return</span> a.name.CompareTo(b.name);
+                }
+	}
+}
 
-  <img src="/img/gitssh/Hasssh.png" alt="Hasssh">
-
-</p>
-<h4 id="2创建ssh">2.创建ssh</h4>
-<p>输入如下命令，将引号内的邮箱换成你的GitHub注册邮箱</p>
-<pre tabindex="0"><code>	ssh-keygen -t rsa -C 'youremail@qq.com'
-</code></pre><p>然后无脑回车，完成后出现
-
-  <img src="/img/gitssh/sshkey.png" alt="sshkey">
-
-</p>
-<h4 id="3查看公匙">3.查看公匙</h4>
-<pre tabindex="0"><code>	cat ~/.ssh/id_rsa.pub
-</code></pre><p>输入上面的命令，得到如图所示字符串
-
-  <img src="/img/gitssh/pub.png" alt="pub">
-
-
-或者看上面保存的地址，打开id_rsa.pub 文件复制文件内容
-
-  <img src="/img/gitssh/keypos.png" alt="keypos">
-
-</p>
-<h4 id="4添加-ssh-key">4.添加 SSH key</h4>
+</code></pre></div><h4 id="代码可直接复制粘贴到菜鸟教程c-在线工具httpswwwrunoobcomtryshowcsphpfilenamehelloworld查看效果">代码可直接复制粘贴到菜鸟教程<a href="https://www.runoob.com/try/showcs.php?filename=HelloWorld">C# 在线工具</a>查看效果</h4>
 <p>
-  <img src="/img/gitssh/gitssh1.png" alt="gitssh1">
-
-
-Title 可以随意填
-
-  <img src="/img/gitssh/gitssh2.png" alt="gitssh2">
+  <img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d8b1e741baee496ca2b6ca9b37c57782~tplv-k3u1fbpfcp-watermark.image?" alt="image.png">
 
 </p>
-<h4 id="5验证是否成功">5.验证是否成功</h4>
-<p>输入下面的命令</p>
-<pre tabindex="0"><code>	ssh -T git@github.com
-</code></pre><p>出现下图所示提示就成功了
-
-  <img src="/img/gitssh/success.png" alt="success">
-
-</p>
-
+<h5 id="个人理解-创建一个新的实体类想要一个默认的比较方法就实现icomparable--t--接口使这个类具有可比性">个人理解： 创建一个新的实体类，想要一个默认的比较方法，就实现“IComparable &lt; T &gt;” 接口，使这个类具有可比性。</h5>
+<h5 id="如果需要更多的比较方式比如按年龄按学号就新建一个比较器的类如class-studentcomparator--icomparer--student--实现其它的比较方式使用的时候如listsort-new-studentcomparator-">如果需要更多的比较方式，比如按年龄，按学号，就新建一个比较器的类，如“class StudentComparator : IComparer &lt; Student &gt;”, 实现其它的比较方式。使用的时候如“list.Sort( new StudentComparator() );”</h5>
+<hr>
+<p>补充：如果想将int[]数组按自己的方式进行排序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">    Array.Sort(nums, Compare);
+    <span style="color:#6272a4">// 按绝对值，从大到小排序
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> Compare(<span style="color:#8be9fd">int</span> a, <span style="color:#8be9fd">int</span> b)
+    {
+        <span style="color:#ff79c6">return</span> Math.Abs(b) - Math.Abs(a);
+    }
+</code></pre></div>
 
                 
                 
@@ -309,15 +348,10 @@ Title 可以随意填
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/howtocreatblog1/" data-toggle="tooltip" data-placement="top" title="保姆级免费建博客教程①">&larr;
+                        <a href="/post/gitssh/" data-toggle="tooltip" data-placement="top" title="Git SSH 配置">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/csharpicomparableandicomparer/" data-toggle="tooltip" data-placement="top" title="C# IComparable 和 IComparer">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
                 
