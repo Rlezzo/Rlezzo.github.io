@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="[unity]Mathf Clamp" />
+    <meta property="og:title" content="[unity]Mathf Clamp" />
+    <meta property="twitter:title" content="[unity]Mathf Clamp" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Rezzo">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title> Rezzo 的博客</title>
+    <title>[unity]Mathf Clamp- Rezzo 的博客</title>
 
-    <link rel="canonical" href="/search/placeholder/">
+    <link rel="canonical" href="/post/mathfclamp/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -172,17 +172,25 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                        <a class="tag" href="/tags/unity" title="unity">
+                            unity
+                        </a>
+                        
+                        <a class="tag" href="/tags/method" title="method">
+                            method
+                        </a>
+                        
                     </div>
-                    <h1></h1>
+                    <h1>[unity]Mathf Clamp</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
                             Posted by 
                             
-                                    Rezzo blog 
+                                Rezzo
                              
                             on 
-                            Monday, January 1, 0001
+                            Thursday, December 23, 2021
                             
                             
                             
@@ -208,7 +216,15 @@
                 post-container">
 
                 
-                
+                <p>限制value的值在min和max之间， 如果value小于min，返回min。 如果value大于max，返回max，否则返回value</p>
+<pre tabindex="0"><code>// Set the position of the transform to be that of the time
+// but never less than 1 or more than 3
+//随着时间设置变换位置
+//但是不会小于1或大于3
+function Update () {
+	transform.position = Vector3(Mathf.Clamp(Time.time, 1.0, 3.0), 0, 0);
+}
+</code></pre>
 
                 
                 
@@ -254,6 +270,11 @@
 
                 <hr>
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/csharpalogrithm/" data-toggle="tooltip" data-placement="top" title="C# 常用排序算法实现">&larr;
+                            Previous Post</a>
+                    </li>
                     
                     
                 </ul>
