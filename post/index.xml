@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Rezzo blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rlezzo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rlezzo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C# IComparable 和 IComparer 两种接口的使用区别</title>
+      <link>https://rlezzo.github.io/post/c#-icomparable-%E5%92%8C-icomparer/</link>
+      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rlezzo.github.io/post/c#-icomparable-%E5%92%8C-icomparer/</guid>
+      <description>using System; using System.Collections.Generic; namespace HelloWorldApplication { class HelloWorld { static void Main(string[] args) { Student stu1 = new Student(8, &amp;#34;c&amp;#34;); Student stu2 = new Student(10, &amp;#34;a&amp;#34;); Student stu3 = new Student(24, &amp;#34;b&amp;#34;); List&amp;lt;Student&amp;gt; list = new List&amp;lt;Student&amp;gt;(); list.Add(stu3); list.Add(stu2); list.Add(stu1); foreach(Student stu in list) { Console.WriteLine($&amp;#34;name: {stu.name}; age: {stu.age}&amp;#34;); } Console.WriteLine(&amp;</description>
+    </item>
+    
     <item>
       <title>Git SSH 配置</title>
       <link>https://rlezzo.github.io/post/gitssh/</link>
