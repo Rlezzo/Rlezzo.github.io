@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="[unity]Mathf Clamp" />
-    <meta property="og:title" content="[unity]Mathf Clamp" />
-    <meta property="twitter:title" content="[unity]Mathf Clamp" />
+    <meta name="title" content="[Bat] bat脚本实现文件批量重命名操作" />
+    <meta property="og:title" content="[Bat] bat脚本实现文件批量重命名操作" />
+    <meta property="twitter:title" content="[Bat] bat脚本实现文件批量重命名操作" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Rezzo">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>[unity]Mathf Clamp- Rezzo 的博客</title>
+    <title>[Bat] bat脚本实现文件批量重命名操作- Rezzo 的博客</title>
 
-    <link rel="canonical" href="/post/mathfclamp/">
+    <link rel="canonical" href="/post/batrename/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -172,16 +172,16 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/unity" title="unity">
-                            unity
+                        <a class="tag" href="/tags/tutorials" title="Tutorials">
+                            Tutorials
                         </a>
                         
-                        <a class="tag" href="/tags/method" title="method">
-                            method
+                        <a class="tag" href="/tags/bat" title="Bat">
+                            Bat
                         </a>
                         
                     </div>
-                    <h1>[unity]Mathf Clamp</h1>
+                    <h1>[Bat] bat脚本实现文件批量重命名操作</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -190,7 +190,7 @@
                                 Rezzo
                              
                             on 
-                            Thursday, December 23, 2021
+                            Friday, December 31, 2021
                             
                             
                             
@@ -216,14 +216,34 @@
                 post-container">
 
                 
-                <p>限制value的值在min和max之间， 如果value小于min，返回min。 如果value大于max，返回max，否则返回value</p>
-<pre tabindex="0"><code>// Set the position of the transform to be that of the time
-// but never less than 1 or more than 3
-//随着时间设置变换位置
-//但是不会小于1或大于3
-function Update () {
-	transform.position = Vector3(Mathf.Clamp(Time.time, 1.0, 3.0), 0, 0);
-}
+                <p>批量删除相同前缀</p>
+<pre tabindex="0"><code>@echo off
+title 批量删除前缀名
+echo.
+echo 本批处理可批量删除前缀名
+echo.
+echo.&amp;set /p strtemp3= 请输入要删除前缀的文件类型:
+echo.&amp;set /p strtemp2= 请输入要删除的前缀字符串:
+setlocal enabledelayedexpansion
+for /f &quot;delims=&quot; %%i in ('dir /a /b %strtemp2%*.%strtemp3%') do (
+rem 只将文件名传给var,而不将扩展名传递
+rem set var=%%~ni
+rem 将文件名传给var
+set var=%%i
+rem 当使用变量延迟时，不再使用%%括，而用!!括，否则变量延迟无效
+set var=!var:%strtemp2%=!
+echo %%i !var!
+rem 重命名
+ren &quot;%%i&quot; &quot;!var!&quot;
+rem 输出一个空行
+)
+echo.
+echo OK了！
+echo.
+pause
+</code></pre><p>批量添加前缀</p>
+<pre tabindex="0"><code>@echo off
+for %%i in (*.png)  do ren &quot;%%i&quot; perfix&quot;%%i&quot;
 </code></pre>
 
                 
@@ -272,15 +292,10 @@ function Update () {
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/csharpalogrithm/" data-toggle="tooltip" data-placement="top" title="C# 常用排序算法实现">&larr;
+                        <a href="/post/mathfclamp/" data-toggle="tooltip" data-placement="top" title="[unity]Mathf Clamp">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/batrename/" data-toggle="tooltip" data-placement="top" title="[Bat] bat脚本实现文件批量重命名操作">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
                 

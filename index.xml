@@ -6,7 +6,16 @@
     <description>Recent content on Rezzo blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Dec 2021 22:15:24 +0800</lastBuildDate><atom:link href="https://rlezzo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 16:56:22 +0800</lastBuildDate><atom:link href="https://rlezzo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Bat] bat脚本实现文件批量重命名操作</title>
+      <link>https://rlezzo.github.io/post/batrename/</link>
+      <pubDate>Fri, 31 Dec 2021 16:56:22 +0800</pubDate>
+      
+      <guid>https://rlezzo.github.io/post/batrename/</guid>
+      <description>批量删除相同前缀 @echo off title 批量删除前缀名 echo. echo 本批处理可批量删除前缀名 echo. echo.&amp;amp;set /p strtemp3= 请输入要删除前缀的文件类型: echo.&amp;amp;set /p strtemp2= 请输入要删除的前缀字符串: setlocal enabledelayedexpansion for /f</description>
+    </item>
+    
     <item>
       <title>[unity]Mathf Clamp</title>
       <link>https://rlezzo.github.io/post/mathfclamp/</link>
