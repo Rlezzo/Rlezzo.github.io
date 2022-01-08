@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="[Unity]Mathf Clamp" />
-    <meta property="og:title" content="[Unity]Mathf Clamp" />
-    <meta property="twitter:title" content="[Unity]Mathf Clamp" />
+    <meta name="title" content="[Unity]旋转的三种实现方式" />
+    <meta property="og:title" content="[Unity]旋转的三种实现方式" />
+    <meta property="twitter:title" content="[Unity]旋转的三种实现方式" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Rezzo">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>[Unity]Mathf Clamp- Rezzo 的博客</title>
+    <title>[Unity]旋转的三种实现方式- Rezzo 的博客</title>
 
-    <link rel="canonical" href="/post/mathfclamp/">
+    <link rel="canonical" href="/post/unityrotation/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -172,16 +172,16 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                        <a class="tag" href="/tags/tutorials" title="Tutorials">
+                            Tutorials
+                        </a>
+                        
                         <a class="tag" href="/tags/unity" title="unity">
                             unity
                         </a>
                         
-                        <a class="tag" href="/tags/method" title="method">
-                            method
-                        </a>
-                        
                     </div>
-                    <h1>[Unity]Mathf Clamp</h1>
+                    <h1>[Unity]旋转的三种实现方式</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -190,7 +190,7 @@
                                 Rezzo
                              
                             on 
-                            Thursday, December 23, 2021
+                            Saturday, January 8, 2022
                             
                             
                             
@@ -216,15 +216,72 @@
                 post-container">
 
                 
-                <p>限制value的值在min和max之间， 如果value小于min，返回min。 如果value大于max，返回max，否则返回value</p>
-<pre tabindex="0"><code>// Set the position of the transform to be that of the time
-// but never less than 1 or more than 3
-//随着时间设置变换位置
-//但是不会小于1或大于3
-function Update () {
-	transform.position = Vector3(Mathf.Clamp(Time.time, 1.0, 3.0), 0, 0);
+                <h1 id="transformrotate-欧拉角旋转">Transform.Rotate 欧拉角旋转</h1>
+<h2 id="transformrotatefloat-xangle-float-yangle-float-zangle">Transform.Rotate(float xAngle, float yAngle, float zAngle)</h2>
+<p>「xAngle」以x轴为旋转轴中心每帧旋转的角度</p>
+<p>「yAngle」以y轴为旋转轴中心每帧旋转的角度</p>
+<p>「zAngle」以z轴为旋转轴中心每帧旋转的角度</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">void</span> Update ()
+{
+    <span style="color:#6272a4">// 每一帧，以y轴为旋转轴旋转1°
+</span><span style="color:#6272a4"></span>    transform.Rotate(<span style="color:#bd93f9">0f</span>, <span style="color:#bd93f9">1f</span>, <span style="color:#bd93f9">0f</span>); 
+    <span style="color:#6272a4">// 如果是个人物模型，第一人称看到的效果就是一直向右转
+</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// 每帧旋转1°
+</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// 左手点赞手势，大拇指指向轴正方向，手指蜷曲方向为旋转正方向
+</span><span style="color:#6272a4"></span>}
+</code></pre></div><h2 id="transformrotatevector3-eulerangles">Transform.Rotate(Vector3 eulerAngles)</h2>
+<p>用 Vector3 eulerAngles 代替 三个旋转角</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">void</span> Update () 
+{
+    transform.Rotate(<span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0f</span>,<span style="color:#bd93f9">1f</span>,<span style="color:#bd93f9">0f</span>));
+    <span style="color:#6272a4">// 每一帧，以y轴为旋转轴旋转1°
+</span><span style="color:#6272a4"></span>}
+</code></pre></div><h2 id="transformrotatevector3-axis-float-angle-space-relativeto">Transform.Rotate(Vector3 axis, float angle, Space relativeTo)</h2>
+<p>「Vector3 axis」 旋转轴，new Vector3(0f,1f,0f) 就代表以Y轴为旋转轴，值大小不影响旋转速度</p>
+<p>「angle」 每一帧的旋转角度</p>
+<p>「Space relativeTo」相对于本地坐标还是世界坐标</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">void</span> Update () 
+{
+    transform.Rotate(<span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0f</span>, <span style="color:#bd93f9">1f</span>, <span style="color:#bd93f9">0f</span>), <span style="color:#bd93f9">1f</span>, Space.Self);
+    <span style="color:#6272a4">// 每一帧，以本地坐标系（自身）y轴为旋转轴，旋转1°
+</span><span style="color:#6272a4"></span>}
+</code></pre></div><p>其它解释按方法注解类推。</p>
+<h1 id="transformrotatearound-一个物体围绕另一个物体旋转">Transform.RotateAround  一个物体围绕另一个物体旋转</h1>
+<h2 id="transformrotatearoundvector3-point-vector3-axis-float-angle">Transform.RotateAround(Vector3 point, Vector3 axis, float angle)</h2>
+<p>「Vector3 point」围绕哪个点旋转</p>
+<p>「Vector3 axis」自身哪个轴围绕这个点旋转</p>
+<p>「angle」每一帧旋转的角度</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">void</span> Update ()
+{
+    transform.RotateAround(<span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>), <span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0f</span>, <span style="color:#bd93f9">1f</span>, <span style="color:#bd93f9">0f</span>), <span style="color:#bd93f9">1f</span>);
+    <span style="color:#6272a4">// new Vector3(0, 0, 0) 改成自己的position，就可以实现和上面一样的效果
+</span><span style="color:#6272a4"></span>}
+</code></pre></div><p>个人理解为，空间中一点 point 向 Vector3 axis延长线做追垂线，然后垂线抓住axis，进行旋转。
+打个比方，空间中有一根棍子，记作y轴，然后某一点，向y做垂线，垂线记作z轴，那么以这一点为中心，向x方向做圆周运动。</p>
+<h1 id="直接修改旋转角度">直接修改旋转角度</h1>
+<h2 id="修改欧拉角-eulerangles和localeulerangles">修改欧拉角 eulerAngles和localEulerAngles</h2>
+<p>「eulerAngles」世界坐标系中以欧拉角表示的旋转</p>
+<p>「localEulerAngle」本地坐标中以欧拉角表示的旋转</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">void</span> Update ()
+{
+    <span style="color:#6272a4">// 改变y轴旋转角度30°
+</span><span style="color:#6272a4"></span>    transform.eulerAngles = <span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">30f</span>, <span style="color:#bd93f9">0</span>);
+    <span style="color:#6272a4">// 旋转至某一角度（有过程）
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">float</span> speed = <span style="color:#bd93f9">5.0f</span>;
+    transform.eulerAngles = Vector3.MoveTowards(transform.eulerAngles, <span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">30f</span>, <span style="color:#bd93f9">0</span>), Time.deltaTime * speed);
 }
-</code></pre>
+</code></pre></div><h2 id="rotation和localrotation">rotation和localRotation</h2>
+<p>「rotation」世界坐标系中以四元数表示的旋转</p>
+<p>「localRotation」本地坐标中以四元数表示的旋转</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">void</span> Update () 
+{   
+    <span style="color:#6272a4">// 改变y轴旋转角度30°
+</span><span style="color:#6272a4"></span>    transform.rotation = Quaternion.Euler(<span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">30f</span>, <span style="color:#bd93f9">0</span>));
+    <span style="color:#6272a4">// 旋转至某一角度（有过程）
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">float</span> speed=<span style="color:#bd93f9">10f</span>;        
+    transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(<span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">30f</span>, <span style="color:#bd93f9">0</span>)), Time.deltaTime * speed);
+}
+</code></pre></div>
 
                 
                 
@@ -272,15 +329,10 @@ function Update () {
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/csharpalogrithm/" data-toggle="tooltip" data-placement="top" title="C# 常用排序算法实现">&larr;
+                        <a href="/post/batrename/" data-toggle="tooltip" data-placement="top" title="[Bat] bat脚本实现文件批量重命名操作">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/batrename/" data-toggle="tooltip" data-placement="top" title="[Bat] bat脚本实现文件批量重命名操作">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
                 
