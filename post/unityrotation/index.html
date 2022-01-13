@@ -271,6 +271,7 @@
     transform.eulerAngles = Vector3.MoveTowards(transform.eulerAngles, <span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">30f</span>, <span style="color:#bd93f9">0</span>), Time.deltaTime * speed);
 }
 </code></pre></div><h2 id="rotation和localrotation">rotation和localRotation</h2>
+<p>四元数用于表示旋转，所有的 rotation都为Quaternion类型，没有Vector3类型的 eulerAngles 直观，但其不受万向锁影响，可以轻松插值运算。</p>
 <p>「rotation」世界坐标系中以四元数表示的旋转</p>
 <p>「localRotation」本地坐标中以四元数表示的旋转</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#ff79c6">void</span> Update () 
@@ -333,6 +334,11 @@
                             Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/post/unityfpscontrol/" data-toggle="tooltip" data-placement="top" title="[Unity] 第一人称视角及移动控制">Next
+                            Post &rarr;</a>
+                    </li>
                     
                 </ul>
                 
