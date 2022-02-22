@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Rezzo blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Feb 2022 22:38:49 +0800</lastBuildDate><atom:link href="https://rlezzo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Feb 2022 00:03:52 +0800</lastBuildDate><atom:link href="https://rlezzo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Unity] ⑤第一人称视角控制器——耐力值系统、门的交互（学习笔记）</title>
+      <link>https://rlezzo.github.io/post/unityfpscontroller5/</link>
+      <pubDate>Wed, 23 Feb 2022 00:03:52 +0800</pubDate>
+      
+      <guid>https://rlezzo.github.io/post/unityfpscontroller5/</guid>
+      <description>[Unity] ④第一人称视角控制器——脚步声、血量系统（学习笔记） 耐力值系统 需 求 功 能 耐力值系统 开/关 bool useStamina 耐力条 float maxStamina（最大耐力值）flo</description>
+    </item>
+    
     <item>
       <title>[Unity] ④第一人称视角控制器——脚步声、血量系统（学习笔记）</title>
       <link>https://rlezzo.github.io/post/unityfpscontroller4/</link>
