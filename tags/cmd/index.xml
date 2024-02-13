@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cmd on Rezzo Blog</title>
+    <link>https://rlezzo.github.io/tags/cmd/</link>
+    <description>Recent content in cmd on Rezzo Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Feb 2024 23:24:02 +0800</lastBuildDate>
+    <atom:link href="https://rlezzo.github.io/tags/cmd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://rlezzo.github.io/post/batdelemptydir/</link>
+      <pubDate>Tue, 13 Feb 2024 23:24:02 +0800</pubDate>
+      <guid>https://rlezzo.github.io/post/batdelemptydir/</guid>
+      <description>@echo off for /f &amp;#34;tokens=*&amp;#34; %%i in (&amp;#39;dir/s/b/ad^|sort /r&amp;#39;) do rd &amp;#34;%%i&amp;#34; 批量删除空目录</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Rezzo Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Apr 2023 02:26:50 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Feb 2024 23:24:02 +0800</lastBuildDate>
     <atom:link href="https://rlezzo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cmd</title>
+      <link>https://rlezzo.github.io/tags/cmd/</link>
+      <pubDate>Tue, 13 Feb 2024 23:24:02 +0800</pubDate>
+      <guid>https://rlezzo.github.io/tags/cmd/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Tutorials</title>
       <link>https://rlezzo.github.io/tags/tutorials/</link>

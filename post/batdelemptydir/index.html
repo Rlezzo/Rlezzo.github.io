@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Bat" />
-    <meta property="og:title" content="Bat" />
-    <meta property="twitter:title" content="Bat" />
+    <meta name="title" content="" />
+    <meta property="og:title" content="" />
+    <meta property="twitter:title" content="" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Rezzo">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Bat |  Rezzo 的博客</title>
+    <title> Rezzo 的博客</title>
 
-    <link rel="canonical" href="/tags/bat/">
+    <link rel="canonical" href="/post/batdelemptydir/">
 
     
     
@@ -157,14 +157,41 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-page-title-img.png'); background-size: cover; background-position: center 20%;">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-page-title-img.png')
+    }
+</style>
+
+<header class="intro-header" >
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-4 col-md-10 col-md-offset-2 "> 
-                <div class="site-heading" style="position: relative;">
-                    <h1 style="opacity: 0.5; position: absolute; right: 10%; bottom: 60px;">Rezzo Blog </h1> 
-                    
-		    <span class="subheading" style="opacity: 0.5; position: absolute; right: 10%; bottom: 30px;">K-ON！</span> 
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/cmd" title="cmd">
+                            cmd
+                        </a>
+                        
+                    </div>
+                    <h1></h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Rezzo
+                             
+                            on 
+                            Tuesday, February 13, 2024
+                            
+                            
+                            
+                            
+                    </span>
                 </div>
             </div>
         </div>
@@ -173,189 +200,119 @@
 
 
 
-  
-<div data-pagefind-ignore="all" class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
-<div data-pagefind-ignore="all">
 
-<div class="post-preview">
-    <a href="https://rlezzo.github.io/post/batrename/">
-        <h2 class="post-title">
-            [Bat] bat脚本实现文件批量重命名操作
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            批量删除相同前缀 @echo off title 批量删除前缀名 echo. echo 本批处理可批量删除前缀名 echo. echo.&amp;set /p strtemp3= 请输入要删除前缀的文件类型: echo.&amp;set /p strtemp2= 请输入要删除的前缀字符串: setlocal enabledelayedexpansion for /f
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Rezzo on Friday, December 31, 2021
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-</div>
+<article>
+    <div class="container">
+        <div class="row">
 
             
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span>@<span style="color:#ff79c6">echo</span> off
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> <span style="color:#ff79c6">/f</span> <span style="color:#f1fa8c">&#34;tokens=*&#34;</span> <span style="color:#f1fa8c">%%</span>i <span style="color:#ff79c6">in</span> (<span style="color:#f1fa8c">&#39;dir/s/b/ad^|sort /r&#39;</span>) <span style="color:#ff79c6">do</span> <span style="color:#ff79c6">rd</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">%%</span><span style="color:#f1fa8c">i&#34;</span>
+</span></span></code></pre></div><p>批量删除空目录</p>
 
 
+                
 
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-	
-    <section class="visible-md visible-lg">
-	
-        <div class="short-about">
-            
-            <a href="/about">
-               <img src="/img/Hirasawa_yui.jpg" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>我所能做的就是首先让其接受“现在的自己”，不管结果如何，首先让其树立起向前迈进的勇气。阿德勒心理学把这叫作“鼓励”。</p>
-            
-           
-           <ul class="list-inline">
-               
-               <li>
-                   <a href="mailto:782875367@qq.com">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/Rlezzo">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-            
-            
-               
-               
-               
-               
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/newfpscontroller/" data-toggle="tooltip" data-placement="top" title="Let&#39;s Make a First Person Game in Unity 学习笔记(一）">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
                 </ul>
+                
+
+                
+
+
+
             </div>
-    </section>
-	
-    
-    
-    <section>
-        <hr>
-        <h5>QUICK LINKS</h5>
-        <ul class="list-inline">
-            
-            <li><a target="_blank" href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/">C# 编程指南</a></li>
-            
-            <li><a target="_blank" href="https://catlikecoding.com/unity/tutorials/">Shader for Unity</a></li>
-            
-            <li><a target="_blank" href="https://dev.gameres.com/program/unity3dmanual/unity3d.html">Unity3D中文手册</a></li>
-            
-            <li><a target="_blank" href="https://gdconf.com/">GDC</a></li>
-            
-            <li><a target="_blank" href="https://juejin.cn/">掘金</a></li>
-            
-        </ul>
-    </section>
-    
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
+
             
             
-               
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
             
-               
+
             
-               
-                    <a href="/tags/blog" title="blog">
-                        blog
-                    </a>
-               
-            
-               
-            
-               
-            
-               
-            
-               
-            
-               
-            
-               
-                    <a href="/tags/tutorials" title="tutorials">
-                        tutorials
-                    </a>
-               
-            
-               
-                    <a href="/tags/unity" title="unity">
-                        unity
-                    </a>
-               
-            
-               
-            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/blog" title="blog">
+                            blog
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/tutorials" title="tutorials">
+                            tutorials
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/unity" title="unity">
+                            unity
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
         </div>
-    </section>
-    
-
-    
-    
-    
-</div>
-
-	</div>
-</div>
-
+    </div>
+</article>
 
 
 
