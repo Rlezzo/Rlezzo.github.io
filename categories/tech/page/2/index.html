@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Tips" />
-    <meta property="og:title" content="Tips" />
-    <meta property="twitter:title" content="Tips" />
+    <meta name="title" content="Tech" />
+    <meta property="og:title" content="Tech" />
+    <meta property="twitter:title" content="Tech" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Rezzo">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Tips |  Rezzo 的博客</title>
+    <title>Tech |  Rezzo 的博客</title>
 
-    <link rel="canonical" href="/categories/tips/">
+    <link rel="canonical" href="/categories/tech/">
 
     
     
@@ -189,20 +189,20 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
-    <a href="https://rlezzo.github.io/post/batdelemptydir/">
+    <a href="https://rlezzo.github.io/post/unityfpscontroller2/">
         <h2 class="post-title">
-            [bat]批量删除空目录
+            [Unity] ②第一人称视角控制器——开镜、头部摆动、斜面滑落（学习笔记）
         </h2>
 	
         <div class="post-content-preview">
 	
-            @echo off for /f &#34;tokens=*&#34; %%i in (&#39;dir/s/b/ad^|sort /r&#39;) do rd &#34;%%i&#34; 批量删除空目录
+            第一部分： [Unity] ①第一人称视角控制器——冲刺、跳跃、蹲伏（学习笔记） 开镜 首先是是否能执行开镜的开关，然后是按键设定。 需要开镜前后的FOV，「de
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Rezzo on Tuesday, February 13, 2024
+        Posted by Rezzo on Saturday, February 12, 2022
         
         
     
@@ -212,20 +212,20 @@
 <hr>
 
 <div class="post-preview">
-    <a href="https://rlezzo.github.io/post/batrename/">
+    <a href="https://rlezzo.github.io/post/unityfpscontroller1/">
         <h2 class="post-title">
-            [Bat] bat脚本实现文件批量重命名操作
+            [Unity] ①第一人称视角控制器——冲刺、跳跃、蹲伏（学习笔记）
         </h2>
 	
         <div class="post-content-preview">
 	
-            批量删除相同前缀 @echo off title 批量删除前缀名 echo. echo 本批处理可批量删除前缀名 echo. echo.&amp;set /p strtemp3= 请输入要删除前缀的文件类型: echo.&amp;set /p strtemp2= 请输入要删除的前缀字符串: setlocal enabledelayedexpansion for /f
+            在油管上找到一个很详细的Unity FPS Controller Unity Tutorial，决定跟着这个系列重新做了。 第一人称视角移动 按照这个教程，修改了一部分代码。 public class PlayerController :
        
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by Rezzo on Friday, December 31, 2021
+        Posted by Rezzo on Tuesday, January 25, 2022
         
         
     
@@ -235,66 +235,66 @@
 <hr>
 
 <div class="post-preview">
-    <a href="https://rlezzo.github.io/post/csharpalogrithm/">
+    <a href="https://rlezzo.github.io/post/unityfpscontrol/">
         <h2 class="post-title">
-            C# 常用排序算法实现
+            [Unity] 第一人称视角及移动控制
         </h2>
 	
         <div class="post-content-preview">
 	
-            theme: vuepress 图出处：Leetcode图解算法数据结构 平均时间复杂度O(n^2) 下面排序算法中用到的Swap函数 public void Swap(int[] arr, int a, int b) { // 不能同一个变量，异
+            RigidBody 实现 第一人称鼠标视角控制 目标： ①实现上下看 ②实现左右看 ③将视角限制在合理的范围（上下不超过90°） 新建Player ①先捏个人，「Hiera
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Rezzo on Thursday, January 13, 2022
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="https://rlezzo.github.io/post/unityrotation/">
+        <h2 class="post-title">
+            [Unity]旋转的三种实现方式
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            Transform.Rotate 欧拉角旋转 Transform.Rotate(float xAngle, float yAngle, float zAngle) 「xAngle」以x轴为旋转轴中心每帧旋转的角度 「yAngle」以y轴为旋转轴中心每帧旋转的角度 「zAngle」以z
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by Rezzo on Saturday, January 8, 2022
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="https://rlezzo.github.io/post/mathfclamp/">
+        <h2 class="post-title">
+            [Unity]Mathf Clamp
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            限制value的值在min和max之间， 如果value小于min，返回min。 如果value大于max，返回max，否则返回value // Set the
        
         </div>
     </a>
     <p class="post-meta">
     
         Posted by Rezzo on Thursday, December 23, 2021
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://rlezzo.github.io/post/csharpicomparableandicomparer/">
-        <h2 class="post-title">
-            C# IComparable 和 IComparer
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            using System; using System.Collections.Generic; namespace HelloWorldApplication { class HelloWorld { static void Main(string[] args) { Student stu1 = new Student(8, &#34;c&#34;); Student stu2 = new Student(10, &#34;a&#34;); Student stu3 = new Student(24, &#34;b&#34;); List&lt;Student&gt; list = new List&lt;Student&gt;(); list.Add(stu3); list.Add(stu2); list.Add(stu1); foreach(Student stu in list) { Console.WriteLine($&#34;name: {stu.name}; age: {stu.age}&#34;); } Console.WriteLine(&
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Rezzo on Thursday, December 23, 2021
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://rlezzo.github.io/post/gitssh/">
-        <h2 class="post-title">
-            Git SSH 配置
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            1.查看是否配置过密匙 cd ~/.ssh 不加cd，就是看存不存在 .ssh 文件夹 加cd，如果存在这个文件夹，就直接跳转到这个文件夹 如果不存在这个文件夹，会显示 No such
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Rezzo on Thursday, November 11, 2021
         
         
     
@@ -310,10 +310,10 @@
 
 <ul class="pager" data-pagefind-ignore="all">
     
-    
-    <li class="next">
-        <a href="/categories/tips/page/2/">Older Posts &rarr;</a>
+    <li class="previous">
+        <a href="/categories/tech/">&larr; Newer Posts</a>
     </li>
+    
     
 </ul>
 
